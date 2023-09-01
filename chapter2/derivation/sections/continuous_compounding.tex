@@ -1,0 +1,21 @@
+\subsection{Notation}
+The following notation will be used:
+\begin{itemize}
+    \item
+    $f(t)$: Balance at time $t$
+    \item
+    $r$: Continuous compounding interest rate
+\end{itemize}
+\subsection{Derivation of $f(t)$}
+At any given time $t$, accrued interest is $rf(t)$. Thus:
+\[\frac{df(t)}{dt}=rf(t)\]
+Therefore:
+\[
+    \begin{array}{lcl}
+        \frac{1}{f(t)}\frac{df(t)}{dt} &= &r\\
+        \int{\frac{1}{f(t)}\frac{df(t)}{dt}}{dt} &= &\int{r}{dt}\\
+        \int{\frac{1}{f(t)}}{df(t)} &= &rt\\
+        \ln{f(t)} &= &rt\\
+        f(t) &= &e^{rt}\\
+    \end{array}
+\]
