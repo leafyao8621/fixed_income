@@ -1,0 +1,30 @@
+\subsection{Proof}
+Prove that \[\sum\limits_{t = a}^b{z^t} = \frac{z^a - z^{b + 1}}{1 - z}\]
+
+\begin{proof}
+    \[
+        \sum\limits_{t = a}^b{z^t} = z^a + z^{a + 1} + \cdots + z^b
+    \]
+    \[
+        z\sum\limits_{t = a}^b{z^t} = z^{a + 1} + z^{a + 2} + \cdots + z^{b + 1}
+    \]
+    $\therefore$
+    \[
+        \begin{array}{ll}
+            &z\sum\limits_{t = a}^b{z^t} - \sum\limits_{t = a}^b{z^t}\\
+            = &
+            z^{b + 1} + (z^b - z^b) + \cdots + (z^{a + 1} - z^{a + 1}) - z^a\\
+            = &z^{b + 1} - z^a
+        \end{array}
+    \]
+    $\therefore$
+    \[
+        \begin{array}{lll}
+            (z - 1)\sum\limits_{t = a}^b{z^t} &= &z^{b + 1} - z^a\\
+            \sum\limits_{t = a}^b{z^t} &= &
+            \frac{z^{b + 1} - z^a}{z - 1}\\
+            &= &\frac{z^a - z^{b + 1}}{1 - z}
+        \end{array}
+    \]
+\end{proof}
+
