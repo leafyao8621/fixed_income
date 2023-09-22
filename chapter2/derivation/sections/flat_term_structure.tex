@@ -6,35 +6,72 @@ par rates is also flat at the same rate.\par
 The following notation will be used:\par
 \begin{itemize}
     \item
-    $T$
+    $T$: Maturity
     \item
-    $r$: Continuous compounding interest rate
+    $C(T)$: Par rate for maturity $T$
+    \item
+    $\hat{r}$: Spot rate for term $t$
+    \item
+    $r$: Flat spot rate value
 \end{itemize}
 
 \subsection{Proof}
 \begin{proof}
     \[
-        \sum\limits_{t = a}^b{z^t} = z^a + z^{a + 1} + \cdots + z^b
+        \frac{C(T)}{2}\sum\limits_{t = 1}^{2T}
+        \left(1 + \frac{\hat{r}(t)}{2}\right)^{-t} +
+        \left(1 + \frac{\hat{r}(t)}{2}\right)^{-2T} = 1
     \]
+    $\because$
+    \[\hat{r}(t) = \hat{r}\]
+    $\therefore$
     \[
-        z\sum\limits_{t = a}^b{z^t} = z^{a + 1} + z^{a + 2} + \cdots + z^{b + 1}
+        \frac{C(T)}{2}\sum\limits_{t = 1}^{2T}
+        \left(1 + \frac{\hat{r}}{2}\right)^{-t} +
+        \left(1 + \frac{\hat{r}(t)}{2}\right)^{-2T} = 1
     \]
     $\therefore$
     \[
-        \begin{array}{ll}
-            &z\sum\limits_{t = a}^b{z^t} - \sum\limits_{t = a}^b{z^t}\\
-            = &
-            z^{b + 1} + (z^b - z^b) + \cdots + (z^{a + 1} - z^{a + 1}) - z^a\\
-            = &z^{b + 1} - z^a
+        \begin{array}{lll}
+            \frac{C(T)}{2}\cdot
+            \frac
+            {
+                \left((1 + \frac{\hat{r}}{2})^{-1}\right) -
+                \left(1 + \frac{\hat{r}}{2}\right)^{-2T - 1}
+            }
+            {1 - (1 + \frac{\hat{r}}{2})^{-1}} +
+            \left(1 + \frac{\hat{r}(t)}{2}\right)^{-2T} &= &1\\
+        \end{array}
+    \]
+    Let \[u = (1 + \hat{r})^{-1}\]
+    $\therefore$
+    \[
+        \begin{array}{lll}
+            \frac{C(T)}{2}\cdot
+            \frac
+            {
+                u -
+                u^{2T + 1}
+            }
+            {1 - u} +
+            u^{2T} &= &1\\
+            \frac{C(T)}{2} &= &
+            \left(1 - u^{2T}\right)\cdot
+            \frac{1 - u}{u\left(1 - u^{2T}\right)}\\
+            C(T) &= \frac{2 - 2u}{u}
         \end{array}
     \]
     $\therefore$
     \[
         \begin{array}{lll}
-            (z - 1)\sum\limits_{t = a}^b{z^t} &= &z^{b + 1} - z^a\\
-            \sum\limits_{t = a}^b{z^t} &= &
-            \frac{z^{b + 1} - z^a}{z - 1}\\
-            &= &\frac{z^a - z^{b + 1}}{1 - z}
+            C(T) &= &
+            \frac
+            {2 - \frac{2}{1 + \frac{\hat{r}}{2}}}
+            {\left(1 + \frac{\hat{r}}{2}\right)^{-1}}\\
+            &= &
+            \frac{\hat{r}}{1 + \frac{\hat{r}}{2}}\cdot
+            \left(1 + \frac{\hat{r}}{2}\right)\\
+            &= &\hat{r}\\
         \end{array}
     \]
 \end{proof}
